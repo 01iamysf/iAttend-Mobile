@@ -1,0 +1,36 @@
+{
+  "name": "iattend",
+  "version": "1.0.0",
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "deploy": "npx expo export -p web && npx eas-cli@latest deploy"
+  },
+  "dependencies": {
+    "axios": "^1.16.1",
+    "expo": "^56.0.4",
+    "expo-blur": "~56.0.3",
+    "expo-document-picker": "~56.0.4",
+    "expo-image-picker": "~56.0.13",
+    "expo-router": "~56.2.6",
+    "expo-secure-store": "~56.0.4",
+    "expo-splash-screen": "~56.0.10",
+    "expo-status-bar": "~56.0.4",
+    "jwt-decode": "^4.0.0",
+    "lucide-react-native": "^1.16.0",
+    "nativewind": "^4.2.4",
+    "papaparse": "^5.5.3",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.85.3",
+    "react-native-reanimated": "^4.3.1",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-svg": "15.15.4",
+    "react-native-web": "^0.21.0",
+    "tailwindcss": "^3.4.19"
+  },
+  "private": true
+}

@@ -1,0 +1,23 @@
+env: load .env
+env: export EXPO_PUBLIC_API_URL
+Your Expo app does not have a 'userInterfaceStyle' setting which can to confusing color scheme behavior. Please set a 'userInterfaceStyle' to remove this warning (recommended 'automatic'). https://docs.expo.dev/develop/user-interface/color-themes
+Starting Metro Bundler
+
+Web Bundling failed 3046ms node_modules/expo-router/entry.js (520 modules)
+
+Error: Unable to resolve module expo-status-bar from /home/mishkat/Desktop/Clg-Project/iAttend/mobile/app/index.jsx: expo-status-bar could not be found within the project or in these directories:
+  node_modules
+[0m [90m 1 |[39m [36mimport[39m { [33mText[39m[33m,[39m [33mView[39m } [36mfrom[39m [32m'react-native'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m { [33mStatusBar[39m } [36mfrom[39m [32m'expo-status-bar'[39m[33m;[39m
+ [90m   |[39m                            [31m[1m^[22m[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mIndex[39m() {
+ [90m 5 |[39m   [36mreturn[39m ([0m
+
+Import stack:
+
+ app/index.jsx
+ | import "expo-status-bar"
+
+ app (require.context)
+

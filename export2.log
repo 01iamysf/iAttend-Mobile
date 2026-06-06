@@ -1,0 +1,7 @@
+env: load .env
+env: export EXPO_PUBLIC_API_URL
+Starting Metro Bundler
+
+Web Bundling failed 2510ms node_modules/expo-router/entry.js (775 modules)
+
+Error: Unexpected end of MessagePack data
