@@ -68,7 +68,7 @@ function RootLayoutNav() {
           pointerEvents={appReady ? "none" : "auto"}
         >
           <Image 
-            source={require('../assets/images/logo.png')} 
+            source={require('../assets/images/logo.jpg')} 
             style={{ width: 160, height: 160 }} 
             resizeMode="contain" 
           />

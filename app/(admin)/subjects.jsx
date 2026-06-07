@@ -16,7 +16,7 @@ export default function Subjects() {
   // Modal State
   const [modalVisible, setModalVisible] = useState(false);
   const [editingSubject, setEditingSubject] = useState(null);
-  const [subjectForm, setSubjectForm] = useState({ subjectName: '', subjectCode: '', credits: '', type: 'theory', departmentId: '' });
+  const [subjectForm, setSubjectForm] = useState({ subjectName: '', departmentId: '' });
   const [saving, setSaving] = useState(false);
 
   const fetchData = async () => {
@@ -53,29 +53,26 @@ export default function Subjects() {
       setEditingSubject(subject);
       setSubjectForm({
         subjectName: subject.subjectName,
-        subjectCode: subject.subjectCode,
-        credits: (subject.credits || 0).toString(),
-        type: subject.type,
         departmentId: subject.departmentId?._id || subject.departmentId
       });
     } else {
       setEditingSubject(null);
-      setSubjectForm({ subjectName: '', subjectCode: '', credits: '', type: 'theory', departmentId: activeDeptId || '' });
+      setSubjectForm({ subjectName: '', departmentId: activeDeptId || '' });
     }
     setModalVisible(true);
   };
 
   const saveSubject = async () => {
-    if (!subjectForm.subjectName || !subjectForm.subjectCode || !subjectForm.departmentId) {
+    if (!subjectForm.subjectName || !subjectForm.departmentId) {
       return Alert.alert('Error', 'Please fill required fields');
     }
     setSaving(true);
     try {
-      const payload = { ...subjectForm, credits: parseInt(subjectForm.credits) || 0 };
+      const payload = { ...subjectForm };
       if (editingSubject) {
-        await api.put(`/admin/subject/${editingSubject._id}`, payload);
+        await api.put(`/admin/subjects/${editingSubject._id}`, payload);
       } else {
-        await api.post('/admin/create-subject', payload);
+        await api.post('/admin/subjects', payload);
       }
       setModalVisible(false);
       fetchData();
@@ -97,7 +94,7 @@ export default function Subjects() {
           style: 'destructive',
           onPress: async () => {
             try {
-              await api.delete(`/admin/subject/${id}`);
+              await api.delete(`/admin/subjects/${id}`);
               fetchData();
             } catch (err) {
               Alert.alert('Error', 'Failed to delete');
@@ -112,7 +109,7 @@ export default function Subjects() {
     Alert.alert('Delete', 'Are you sure?', [
       { text: 'Cancel' },
       { text: 'Delete', style: 'destructive', onPress: async () => {
-        await api.delete(`/admin/subject/${id}`);
+        await api.delete(`/admin/subjects/${id}`);
         fetchData();
       }}
     ]);

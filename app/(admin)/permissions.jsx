@@ -150,7 +150,7 @@ export default function Permissions() {
             <View className="space-y-6 pb-10">
               
               {/* Search User */}
-              <View className="bg-white dark:bg-slate-800 p-5 rounded-[24px] shadow-sm border border-slate-100 dark:border-slate-700">
+              <View className="bg-white dark:bg-slate-800 p-5 rounded-[24px] border border-slate-100 dark:border-slate-700">
                 <Text className="text-base font-bold text-slate-800 dark:text-slate-100 mb-3">Search User</Text>
                 <View className="flex-row bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 items-center">
                   <Search size={18} color="#94A3B8" />
@@ -189,7 +189,7 @@ export default function Permissions() {
 
               {/* Permissions Editor */}
               {selectedUser && (
-                <View className="bg-white dark:bg-slate-800 p-5 rounded-[24px] shadow-sm border border-slate-100 dark:border-slate-700">
+                <View className="bg-white dark:bg-slate-800 p-5 rounded-[24px] border border-slate-100 dark:border-slate-700">
                   <View className="flex-row justify-between items-center mb-4 pb-4 border-b border-slate-100 dark:border-slate-700">
                     <View className="flex-1">
                       <Text className="text-lg font-bold text-slate-800 dark:text-slate-100">{selectedUser.name}</Text>
@@ -198,7 +198,7 @@ export default function Permissions() {
                     <TouchableOpacity 
                       onPress={saveIndividualPermissions}
                       disabled={saving}
-                      className="bg-indigo-600 px-4 py-2 rounded-xl flex-row items-center shadow-sm"
+                      className="bg-indigo-600 px-4 py-2 rounded-xl flex-row items-center"
                     >
                       {saving ? <ActivityIndicator size="small" color="white" /> : <Text className="text-white font-bold text-sm">Save</Text>}
                     </TouchableOpacity>
@@ -229,7 +229,7 @@ export default function Permissions() {
 
             </View>
           ) : (
-            <View className="bg-white dark:bg-slate-800 p-6 rounded-[24px] shadow-sm border border-slate-100 dark:border-slate-700 mb-10">
+            <View className="bg-white dark:bg-slate-800 p-6 rounded-[24px] border border-slate-100 dark:border-slate-700 mb-10">
               <Text className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-6 text-center">Bulk Role Configuration</Text>
 
               <View className="space-y-5">
@@ -293,7 +293,7 @@ export default function Permissions() {
                 <TouchableOpacity 
                   onPress={applyBulkPermissions} 
                   disabled={saving}
-                  className="bg-indigo-600 rounded-xl py-4 items-center mt-2 shadow-sm flex-row justify-center"
+                  className="bg-indigo-600 rounded-xl py-4 items-center mt-2 flex-row justify-center"
                 >
                   {saving ? <ActivityIndicator color="white" /> : (
                     <>

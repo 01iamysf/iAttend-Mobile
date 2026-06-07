@@ -9,11 +9,26 @@
     ],
     "name": "iAttend",
     "slug": "iAttend",
+    "icon": "./assets/images/logo.jpg",
     "splash": {
-      "image": "./assets/images/logo.png",
+      "image": "./assets/images/logo.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "userInterfaceStyle": "automatic"
+    "userInterfaceStyle": "automatic",
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "364a54e5-cf52-464a-8e43-2ea0ecbb797a"
+      }
+    },
+    "android": {
+      "package": "com.iamysf.iAttend",
+      "usesCleartextTraffic": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo.jpg",
+        "backgroundColor": "#ffffff"
+      }
+    }
   }
 }

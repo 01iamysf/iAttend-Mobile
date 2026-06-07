@@ -76,10 +76,10 @@ export default function AdminDashboard() {
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor="#4F46E5" />}
       >
         {/* School Identity Banner */}
-        <View className="bg-white dark:bg-slate-800 rounded-[24px] shadow-sm mb-8 overflow-hidden border border-slate-100 dark:border-slate-700">
+        <View className="bg-white dark:bg-slate-800 rounded-[24px] mb-8 overflow-hidden border border-slate-100 dark:border-slate-700">
           <View className="h-48 w-full bg-white dark:bg-slate-800 items-center justify-center overflow-hidden">
             <Image 
-              source={require('../../assets/images/school_illustration.png')} 
+              source={require('../../assets/images/school_illustration.jpg')} 
               className="w-full h-full"
               resizeMode="cover"
             />
@@ -112,7 +112,7 @@ export default function AdminDashboard() {
         </View>
 
         {/* Attendance Snapshot Card */}
-        <View className="bg-white dark:bg-slate-800 rounded-[24px] p-6 shadow-sm border border-slate-100 dark:border-slate-700 mb-6">
+        <View className="bg-white dark:bg-slate-800 rounded-[24px] p-6 border border-slate-100 dark:border-slate-700 mb-6">
           <View className="flex-row justify-between items-center mb-4">
             <View className="flex-row items-center">
               <TrendingUp size={18} color="#4F46E5" />
@@ -143,7 +143,7 @@ export default function AdminDashboard() {
         </View>
 
         {/* Recent System Logs */}
-        <View className="bg-white dark:bg-slate-800 rounded-[24px] p-6 shadow-sm border border-slate-100 dark:border-slate-700 mb-6">
+        <View className="bg-white dark:bg-slate-800 rounded-[24px] p-6 border border-slate-100 dark:border-slate-700 mb-6">
           <View className="flex-row justify-between items-center mb-6">
             <View className="flex-row items-center">
               <Clock size={18} color="#4F46E5" />
@@ -166,7 +166,7 @@ export default function AdminDashboard() {
         </View>
 
         {/* Teacher Performance */}
-        <View className="bg-white dark:bg-slate-800 rounded-[24px] p-6 shadow-sm border border-slate-100 dark:border-slate-700 mb-10">
+        <View className="bg-white dark:bg-slate-800 rounded-[24px] p-6 border border-slate-100 dark:border-slate-700 mb-10">
           <View className="flex-row items-center mb-1">
             <TrendingUp size={18} color="#4F46E5" />
             <Text className="ml-2 text-base font-bold text-slate-800 dark:text-slate-100">Teacher Activity Overview</Text>
