@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, Modal, Animated, Dimensions, Pressable } from 'react-native';
 import { useRouter, usePathname } from 'expo-router';
 import { useAuth } from '../../context/AuthContext';
-import { LayoutDashboard, Calendar, History, Shield, Flame, BookOpen } from 'lucide-react-native';
+import { LayoutDashboard, Calendar, History, Shield, Flame, BookOpen, X } from 'lucide-react-native';
 
 const { width } = Dimensions.get('window');
 
@@ -64,15 +64,15 @@ export default function StudentSidebar({ isOpen, onClose }) {
         >
           {/* Header */}
           <View className="p-6 pt-16 pb-8 bg-[#312e81] dark:bg-slate-800">
-            <View className="flex-row items-center justify-between mb-6">
+            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }} className="mb-6">
               <View className="flex-row items-center">
                 <View className="w-10 h-10 bg-indigo-500 rounded-xl items-center justify-center mr-3">
                   <Shield size={24} color="white" />
                 </View>
                 <Text className="text-2xl font-black text-white tracking-tight">Student</Text>
               </View>
-              <TouchableOpacity onPress={onClose} className="p-2 bg-white/10 rounded-full">
-                <Text className="text-white font-bold">✕</Text>
+              <TouchableOpacity onPress={onClose} className="w-8 h-8 items-center justify-center bg-white/10 rounded-full">
+                <X size={16} color="white" />
               </TouchableOpacity>
             </View>
             
@@ -86,7 +86,8 @@ export default function StudentSidebar({ isOpen, onClose }) {
           <View className="flex-1 p-4 pt-6 space-y-2">
             <Text className="text-indigo-300/60 text-[10px] font-black tracking-widest uppercase mb-2 ml-4">Main Menu</Text>
             {navItems.map((item, index) => {
-              const isActive = pathname === item.path || (item.path === '/(student)' && pathname === '/(student)/index');
+              const cleanPath = item.path.replace(/\(\w+\)\/?/g, '');
+              const isActive = pathname === cleanPath || (cleanPath === '/' && pathname === '/index');
               return (
                 <TouchableOpacity
                   key={index}
