@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Pressable, Image, TouchableOpacity, Modal, ScrollView } from 'react-native';
-import { Menu, X, Mail, User, Book, Building, LogOut } from 'lucide-react-native';
+import { Menu, X, Mail, User, Book, Building, LogOut, Sun, Moon } from 'lucide-react-native';
 import { useSidebar } from '../../app/(student)/_layout';
 import { useAuth } from '../../context/AuthContext';
 import { useRouter } from 'expo-router';
@@ -12,7 +12,7 @@ export default function StudentHeader({ title = 'Student Dashboard' }) {
   const { user, logout } = useAuth();
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const { colorScheme } = useColorScheme();
+  const { colorScheme, toggleColorScheme } = useColorScheme();
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const handleLogout = async () => {
@@ -39,8 +39,20 @@ export default function StudentHeader({ title = 'Student Dashboard' }) {
 
         {/* Right: Actions */}
         <View className="flex-row items-center">
+          {/* Theme Toggle Button */}
+          <TouchableOpacity 
+            onPress={toggleColorScheme}
+            className="w-10 h-10 rounded-[16px] bg-slate-50 dark:bg-slate-700/50 items-center justify-center mr-2 active:scale-95"
+          >
+            {colorScheme === 'dark' ? (
+              <Sun size={20} color="#F59E0B" />
+            ) : (
+              <Moon size={20} color="#64748B" />
+            )}
+          </TouchableOpacity>
+
           {/* Profile Avatar Container */}
-          <TouchableOpacity onPress={() => setIsProfileOpen(true)} className="ml-2 relative">
+          <TouchableOpacity onPress={() => setIsProfileOpen(true)} className="relative">
             <View className="w-11 h-11 rounded-full bg-[#5A52FF] items-center justify-center overflow-hidden border-2 border-white dark:border-slate-700">
               {user?.avatar ? (
                 <Image source={{ uri: user.avatar }} className="w-full h-full" />
@@ -70,7 +82,7 @@ export default function StudentHeader({ title = 'Student Dashboard' }) {
               </TouchableOpacity>
             </View>
 
-            <ScrollView showsVerticalScrollIndicator={false} className="space-y-4">
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: Math.max(insets.bottom, 24) }}>
               
               <View className="items-center mb-6">
                 <View className="w-20 h-20 bg-indigo-100 dark:bg-indigo-900/30 rounded-full items-center justify-center mb-4">
@@ -82,7 +94,7 @@ export default function StudentHeader({ title = 'Student Dashboard' }) {
                 <Text className="text-sm font-bold text-indigo-500 uppercase tracking-wider mt-1">{user?.role}</Text>
               </View>
 
-              <View className="flex-row items-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700">
+              <View className="flex-row items-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700 mb-3">
                 <Mail size={18} color="#64748B" />
                 <View className="ml-3 flex-1">
                   <Text className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase">Email Address</Text>
@@ -91,7 +103,7 @@ export default function StudentHeader({ title = 'Student Dashboard' }) {
               </View>
 
               {user?.departmentId?.departmentName ? (
-                <View className="flex-row items-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700">
+                <View className="flex-row items-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700 mb-3">
                   <Building size={18} color="#64748B" />
                   <View className="ml-3 flex-1">
                     <Text className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase">Department</Text>
@@ -101,7 +113,7 @@ export default function StudentHeader({ title = 'Student Dashboard' }) {
               ) : null}
 
               {user?.classId?.className ? (
-                <View className="flex-row items-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700">
+                <View className="flex-row items-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700 mb-3">
                   <Book size={18} color="#64748B" />
                   <View className="ml-3 flex-1">
                     <Text className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase">Class</Text>
@@ -111,7 +123,7 @@ export default function StudentHeader({ title = 'Student Dashboard' }) {
               ) : null}
 
               {user?.rollNumber ? (
-                <View className="flex-row items-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700">
+                <View className="flex-row items-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700 mb-3">
                   <User size={18} color="#64748B" />
                   <View className="ml-3 flex-1">
                     <Text className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase">Roll Number</Text>
@@ -121,7 +133,7 @@ export default function StudentHeader({ title = 'Student Dashboard' }) {
               ) : null}
 
               {user?.parentEmail ? (
-                <View className="flex-row items-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700">
+                <View className="flex-row items-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700 mb-3">
                   <Mail size={18} color="#64748B" />
                   <View className="ml-3 flex-1">
                     <Text className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase">Parent Email</Text>
@@ -132,7 +144,7 @@ export default function StudentHeader({ title = 'Student Dashboard' }) {
 
               <TouchableOpacity 
                 onPress={handleLogout}
-                className="flex-row items-center justify-center py-3.5 rounded-xl bg-red-50 dark:bg-red-900/20 mt-6 border border-red-100 dark:border-red-900/40"
+                className="flex-row items-center justify-center py-3.5 rounded-xl bg-red-50 dark:bg-red-900/20 mt-4 border border-red-100 dark:border-red-900/40"
               >
                 <LogOut size={18} color="#EF4444" />
                 <Text className="ml-2 text-red-500 font-bold text-sm">Sign Out</Text>

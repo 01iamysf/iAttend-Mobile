@@ -55,7 +55,7 @@ export default function TeacherDashboard() {
               </TouchableOpacity>
             </View>
 
-            <ScrollView showsVerticalScrollIndicator={false} className="space-y-4">
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: Math.max(insets.bottom, 24) }}>
               
               <View className="items-center mb-6">
                 <View className="w-20 h-20 bg-indigo-100 dark:bg-indigo-900/30 rounded-full items-center justify-center mb-4">
@@ -67,7 +67,7 @@ export default function TeacherDashboard() {
                 <Text className="text-sm font-bold text-indigo-500 uppercase tracking-wider mt-1">{user?.role}</Text>
               </View>
 
-              <View className="flex-row items-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700">
+              <View className="flex-row items-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700 mb-3">
                 <Mail size={18} color="#64748B" />
                 <View className="ml-3 flex-1">
                   <Text className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase">Email Address</Text>
@@ -76,7 +76,7 @@ export default function TeacherDashboard() {
               </View>
 
               {user?.departmentId?.departmentName ? (
-                <View className="flex-row items-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700">
+                <View className="flex-row items-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700 mb-3">
                   <Building size={18} color="#64748B" />
                   <View className="ml-3 flex-1">
                     <Text className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase">Department</Text>
@@ -87,7 +87,7 @@ export default function TeacherDashboard() {
 
               <TouchableOpacity 
                 onPress={handleLogout}
-                className="flex-row items-center justify-center py-3.5 rounded-xl bg-red-50 dark:bg-red-900/20 mt-6 border border-red-100 dark:border-red-900/40"
+                className="flex-row items-center justify-center py-3.5 rounded-xl bg-red-50 dark:bg-red-900/20 mt-4 border border-red-100 dark:border-red-900/40"
               >
                 <LogOut size={18} color="#EF4444" />
                 <Text className="ml-2 text-red-500 font-bold text-sm">Sign Out</Text>
