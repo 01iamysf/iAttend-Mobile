@@ -87,7 +87,7 @@ export default function StudentDashboard() {
 
         {/* Streaks & Stats */}
         {canView && (
-          <View className="mb-6 space-y-4">
+          <View className="mb-6">
             <View className="flex-row justify-between">
               <View className="w-[48%] bg-white dark:bg-slate-800 p-4 rounded-2xl border border-orange-100 dark:border-orange-900/30">
                 <View className="w-8 h-8 rounded-full bg-orange-100 dark:bg-orange-900/50 items-center justify-center mb-2">
@@ -106,7 +106,7 @@ export default function StudentDashboard() {
               </View>
             </View>
 
-            <View className="bg-white dark:bg-slate-800 p-5 rounded-[24px] border border-slate-100 dark:border-slate-700 flex-row justify-between">
+            <View className="bg-white dark:bg-slate-800 p-5 rounded-[24px] border border-slate-100 dark:border-slate-700 flex-row justify-between mt-4">
               <View className="items-center flex-1 border-r border-slate-100 dark:border-slate-700">
                 <Text className="text-xl font-black text-indigo-600 dark:text-indigo-400">{stats?.totalClasses ?? 0}</Text>
                 <Text className="text-[10px] font-black tracking-widest text-slate-400 uppercase mt-1">Total</Text>
@@ -131,9 +131,9 @@ export default function StudentDashboard() {
           </View>
 
           {todaysSubjects.length > 0 ? (
-            <View className="space-y-3">
+            <View>
               {todaysSubjects.map((s, i) => (
-                <View key={s._id || i} className="bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border-l-4 border-l-indigo-500 border border-slate-100 dark:border-slate-700">
+                <View key={s._id || i} className="bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border-l-4 border-l-indigo-500 border border-slate-100 dark:border-slate-700 mb-3">
                   <Text className="font-bold text-slate-800 dark:text-slate-100 text-sm mb-1">{s.subjectId?.subjectName || s.subjectName}</Text>
                   <Text className="text-xs text-slate-500 dark:text-slate-400">{s.startTime} - {s.endTime}</Text>
                   {s.teacherId?.name && (

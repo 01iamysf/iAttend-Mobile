@@ -66,12 +66,12 @@ export default function HistoryPage() {
       <StudentHeader title="History" />
 
       {/* Filters */}
-      <View className="px-4 py-3 flex-row space-x-2">
+      <View className="px-4 py-3 flex-row">
         {['all', 'present', 'absent'].map(f => (
           <TouchableOpacity
             key={f}
             onPress={() => setFilter(f)}
-            className={`px-4 py-2 rounded-full border ${filter === f ? 'bg-indigo-500 border-indigo-500' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700'}`}
+            className={`px-4 py-2 rounded-full border mr-2 ${filter === f ? 'bg-indigo-500 border-indigo-500' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700'}`}
           >
             <Text className={`font-bold capitalize ${filter === f ? 'text-white' : 'text-slate-600 dark:text-slate-300'}`}>
               {f}

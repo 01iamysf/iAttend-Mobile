@@ -51,13 +51,13 @@ export default function SubjectsPage() {
         <Text className="text-slate-500 dark:text-slate-400 text-sm mb-6 px-1">View your weekly subjects and schedule.</Text>
 
         {subjects.length > 0 ? (
-          <View className="space-y-4">
+          <View>
             {subjects.map((subject, index) => {
               const isIndividual = subject.isIndividuallyAssigned;
               return (
                 <View 
                   key={subject._id || index} 
-                  className={`bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-slate-700 overflow-hidden ${isIndividual ? 'border-t-4 border-t-green-500' : 'border-t-4 border-t-indigo-500'}`}
+                  className={`bg-white dark:bg-slate-800 rounded-[24px] border border-slate-100 dark:border-slate-700 overflow-hidden mb-4 ${isIndividual ? 'border-t-4 border-t-green-500' : 'border-t-4 border-t-indigo-500'}`}
                 >
                   <View className="p-5">
                     <View className="flex-row justify-between items-start mb-4">

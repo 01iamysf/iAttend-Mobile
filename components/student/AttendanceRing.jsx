@@ -119,9 +119,9 @@ export default function AttendanceRing({ present, total }) {
         <Text className={`text-xs font-bold ${cfg.text}`}>{cfg.label}</Text>
       </View>
 
-      <View className="w-full space-y-2">
+      <View className="w-full">
         {insights.map((ins, i) => (
-          <View key={i} className="flex-row items-start p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700">
+          <View key={i} className="flex-row items-start p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 mb-2">
             <Text className="text-base mr-3">{ins.icon}</Text>
             <View className="flex-1">
               <Text className={`text-sm font-bold ${cfg.text}`}>{ins.text}</Text>
