@@ -1,24 +1,25 @@
-# Expo Router Example
+# iAttend Mobile
 
-Use [`expo-router`](https://docs.expo.dev/router/introduction/) to build native navigation using files in the `app/` directory.
+This is the mobile application client for the iAttend attendance tracking system. It is built using React Native and Expo, and connects to the iAttend backend API.
 
-## Launch your own
+## Companion Web Application
 
-[![Launch with Expo](https://github.com/expo/examples/blob/master/.gh-assets/launch.svg?raw=true)](https://launch.expo.dev/?github=https://github.com/expo/examples/tree/master/with-router)
+The desktop dashboard and administrative panel are available in the web repository:
+https://github.com/01iamysf/iAttend
 
-## 🚀 How to use
+## Getting Started
 
+1. Install dependencies:
 ```sh
-npx create-expo-app -e with-router
+npm install
 ```
 
-## Deploy
+2. Configure environment variables in a `.env` file in the root directory:
+```
+EXPO_PUBLIC_API_URL=http://<your-lan-ip>:5000/api
+```
 
-Deploy on all platforms with Expo Application Services (EAS).
-
-- Deploy the website: `npx eas-cli deploy` — [Learn more](https://docs.expo.dev/eas/hosting/get-started/)
-- Deploy on iOS and Android using: `npx eas-cli build` — [Learn more](https://expo.dev/eas)
-
-## 📝 Notes
-
-- [Expo Router: Docs](https://docs.expo.dev/router/introduction/)
+3. Run the development server:
+```sh
+npx expo start -c
+```
