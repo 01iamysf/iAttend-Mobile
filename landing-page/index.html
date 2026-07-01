@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iAttend — Smart Student Attendance System</title>
+  <meta name="description" content="Download the iAttend mobile application to track attendance, manage leaves, record check-ins, and keep track of classroom streaks.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header>
+    <a href="#" class="logo" id="header-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      iAttend
+    </a>
+  </header>
+
+  <main>
+    <!-- Hero & Visual Showcase Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-content">
+        <h1>Smart attendance, <span>simplified</span>.</h1>
+        <p>The ultimate attendance manager for educational institutions. Designed for Students, Teachers, Parents, and Administrators to collaborate seamlessly.</p>
+        <div class="cta-group">
+          <a href="iattend.apk" download class="btn btn-primary" id="download-apk-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download APK
+          </a>
+          <a href="#how-to-install" class="btn btn-secondary" id="instructions-btn">
+            How to Install
+          </a>
+        </div>
+      </div>
+
+      <!-- App Showcase Device -->
+      <div class="showcase-container" id="showcase">
+        <div class="showcase-tabs">
+          <button class="tab-btn active" data-role="student">Student</button>
+          <button class="tab-btn" data-role="teacher">Teacher</button>
+          <button class="tab-btn" data-role="parent">Parent</button>
+          <button class="tab-btn" data-role="admin">Admin</button>
+        </div>
+
+        <div class="phone-shell">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            
+            <!-- Student Screen Mockup -->
+            <div class="app-screen active" id="screen-student">
+              <div class="mockup-header">
+                <span class="mockup-header-title">Student Dashboard</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div class="mockup-content">
+                <div class="mockup-card">
+                  <div class="mockup-title">Attendance Status</div>
+                  <div class="ring-container">
+                    <div class="ring-circle">
+                      <div class="ring-text">88%</div>
+                    </div>
+                  </div>
+                  <center><span class="mockup-badge badge-success">Good Standing</span></center>
+                </div>
+                <div class="mockup-card">
+                  <div class="mockup-title">Streaks & Highlights</div>
+                  <div class="mockup-value">5 Days 🔥</div>
+                  <p style="font-size: 0.65rem; color: #64748b; margin-top: 4px;">Keep checking in daily to maintain your streak!</p>
+                </div>
+              </div>
+              <div class="mock-tabbar">
+                <div class="mock-tabitem active"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</div>
+                <div class="mock-tabitem"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Leaves</div>
+                <div class="mock-tabitem"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>History</div>
+              </div>
+            </div>
+
+            <!-- Teacher Screen Mockup -->
+            <div class="app-screen" id="screen-teacher">
+              <div class="mockup-header">
+                <span class="mockup-header-title">Teacher Panel</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/></svg>
+              </div>
+              <div class="mockup-content">
+                <div class="mockup-card">
+                  <div class="mockup-title">Active Classes</div>
+                  <div class="mockup-value">3 Today</div>
+                </div>
+                <div class="mockup-card">
+                  <div class="mockup-title">CS101 Attendance</div>
+                  <div class="list-item">
+                    <div class="avatar">JD</div>
+                    <div class="item-info">
+                      <div class="item-name">John Doe</div>
+                      <div class="item-desc">Present • Checked-in via NFC</div>
+                    </div>
+                  </div>
+                  <div class="list-item">
+                    <div class="avatar">AS</div>
+                    <div class="item-info">
+                      <div class="item-name">Alice Smith</div>
+                      <div class="item-desc">Absent</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mock-tabbar">
+                <div class="mock-tabitem active"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Classes</div>
+                <div class="mock-tabitem"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Students</div>
+              </div>
+            </div>
+
+            <!-- Parent Screen Mockup -->
+            <div class="app-screen" id="screen-parent">
+              <div class="mockup-header">
+                <span class="mockup-header-title">Parent Portal</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </div>
+              <div class="mockup-content">
+                <div class="mockup-card">
+                  <div class="mockup-title">Child: Jack Doe</div>
+                  <div class="mockup-value">92.4%</div>
+                  <span class="mockup-badge badge-success">Highly Regular</span>
+                </div>
+                <div class="mockup-card">
+                  <div class="mockup-title">Recent Absence Alert</div>
+                  <p style="font-size: 0.75rem; color: #1e293b; font-weight: 500;">Physics - 2 days ago</p>
+                  <span class="mockup-badge badge-warning">Unexcused</span>
+                </div>
+              </div>
+              <div class="mock-tabbar">
+                <div class="mock-tabitem active"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Child Stats</div>
+                <div class="mock-tabitem"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Inbox</div>
+              </div>
+            </div>
+
+            <!-- Admin Screen Mockup -->
+            <div class="app-screen" id="screen-admin">
+              <div class="mockup-header">
+                <span class="mockup-header-title">System Admin</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </div>
+              <div class="mockup-content">
+                <div class="mockup-grid">
+                  <div class="mockup-card">
+                    <div class="mockup-title">Users</div>
+                    <div style="font-size: 1rem; font-weight:800;">1,248</div>
+                  </div>
+                  <div class="mockup-card">
+                    <div class="mockup-title">Rate</div>
+                    <div style="font-size: 1rem; font-weight:800;">94.2%</div>
+                  </div>
+                </div>
+                <div class="mockup-card">
+                  <div class="mockup-title">Pending Approvals</div>
+                  <div class="list-item">
+                    <div class="avatar">SL</div>
+                    <div class="item-info">
+                      <div class="item-name">Sick Leave request</div>
+                      <div class="item-desc">From Mark Davis</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mock-tabbar">
+                <div class="mock-tabitem active"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>Console</div>
+                <div class="mock-tabitem"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Users</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation & Credentials Grid -->
+    <section class="guides-grid">
+      <!-- How to Install (Bypassing Android warnings) -->
+      <div id="how-to-install">
+        <h2 class="section-title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          How to Install APK
+        </h2>
+        <p class="section-desc">Because this app is installed directly (sideloaded) and not through the Google Play Store, Android phones show security prompts. Follow these simple steps to install it:</p>
+        
+        <div class="step-accordion">
+          <div class="step-card" id="step1">
+            <div class="step-header">
+              <div class="step-num">01</div>
+              <div class="step-title">Download the APK</div>
+              <svg class="step-icon-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-content">
+              Click the "Download APK" button above to fetch the `iattend.apk` file directly onto your device storage.
+            </div>
+          </div>
+
+          <div class="step-card" id="step2">
+            <div class="step-header">
+              <div class="step-num">02</div>
+              <div class="step-title">Allow Unknown Sources</div>
+              <svg class="step-icon-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-content">
+              Tap the downloaded file. If prompted with a security alert, tap <strong>Settings</strong> and enable <strong>"Allow from this source"</strong> (or "Install unknown apps") for your browser or file manager.
+            </div>
+          </div>
+
+          <div class="step-card" id="step3">
+            <div class="step-header">
+              <div class="step-num">03</div>
+              <div class="step-title">Bypass Play Protect Warning</div>
+              <svg class="step-icon-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-content">
+              If Google Play Protect warns "Blocked by Play Protect" or "Unsafe App Blocked", tap on the <strong>"More Details"</strong> dropdown arrow, then select <strong>"Install Anyway"</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo Credentials -->
+      <div id="demo-credentials">
+        <h2 class="section-title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Demo Credentials
+        </h2>
+        <p class="section-desc">Try out different profiles in the iAttend app. Tap on any card below to copy the login details to your clipboard.</p>
+        
+        <div class="creds-container">
+          <div class="cred-card" data-role="student" data-email="student@iattend.com" data-password="password123" id="cred-student">
+            <div class="cred-role">Student</div>
+            <div class="cred-detail">Email: <strong>student@iattend.com</strong></div>
+            <div class="cred-detail">Password: <strong>password123</strong></div>
+          </div>
+          
+          <div class="cred-card" data-role="teacher" data-email="teacher@iattend.com" data-password="password123" id="cred-teacher">
+            <div class="cred-role">Teacher</div>
+            <div class="cred-detail">Email: <strong>teacher@iattend.com</strong></div>
+            <div class="cred-detail">Password: <strong>password123</strong></div>
+          </div>
+
+          <div class="cred-card" data-role="parent" data-email="parent@iattend.com" data-password="password123" id="cred-parent">
+            <div class="cred-role">Parent</div>
+            <div class="cred-detail">Email: <strong>parent@iattend.com</strong></div>
+            <div class="cred-detail">Password: <strong>password123</strong></div>
+          </div>
+
+          <div class="cred-card" data-role="admin" data-email="admin@iattend.com" data-password="password123" id="cred-admin">
+            <div class="cred-role">Administrator</div>
+            <div class="cred-detail">Email: <strong>admin@iattend.com</strong></div>
+            <div class="cred-detail">Password: <strong>password123</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 iAttend. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
